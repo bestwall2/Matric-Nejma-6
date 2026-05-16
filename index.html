@@ -474,6 +474,30 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:60px
 .in-icon{font-size:15px;flex-shrink:0}
 .in-text{font-size:12px;color:rgba(245,158,11,.8);line-height:1.6}
 
+/* TESTIMONIALS */
+.testimonials{background:var(--surface);padding:80px 5%;position:relative;z-index:1;overflow:hidden}
+.testimonials-inner{max-width:1100px;margin:0 auto}
+.testimonials-carousel{position:relative;margin-top:40px}
+.testimonials-track{display:flex;gap:20px;transition:transform .5s cubic-bezier(.25,.46,.45,.94);will-change:transform}
+.testimonial-card{min-width:calc((100% - 40px)/3);background:var(--surface2);border:1px solid var(--border);border-radius:20px;padding:28px 24px;transition:all .3s;position:relative}
+.testimonial-card:hover{border-color:rgba(124,58,237,.35);transform:translateY(-4px)}
+.testimonial-top{display:flex;align-items:center;gap:14px;margin-bottom:16px}
+.testimonial-avatar{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:20px;color:#fff;flex-shrink:0}
+.testimonial-info{flex:1}
+.testimonial-name{font-size:15px;font-weight:700;color:var(--white);margin-bottom:2px}
+.testimonial-stars{font-size:12px;color:var(--gold);letter-spacing:2px}
+.testimonial-text{font-size:14px;color:var(--muted);line-height:1.7;font-style:italic}
+.testimonial-text::before{content:'"';opacity:.4}
+.testimonial-text::after{content:'"';opacity:.4}
+.testimonial-arrows{display:flex;justify-content:center;gap:12px;margin-top:32px}
+.testimonial-arrow{width:44px;height:44px;border-radius:12px;background:var(--surface3);border:1px solid var(--border);color:var(--muted);font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .25s}
+.testimonial-arrow:hover{background:var(--purple);color:#fff;border-color:var(--purple);transform:scale(1.05)}
+.testimonial-dots{display:flex;justify-content:center;gap:8px;margin-top:18px}
+.testimonial-dot{width:8px;height:8px;border-radius:50%;background:var(--surface4);border:none;cursor:pointer;transition:all .3s;padding:0}
+.testimonial-dot.active{background:var(--purple);width:24px;border-radius:4px}
+@media(max-width:900px){.testimonial-card{min-width:calc(100% - 0px)}}
+@media(min-width:901px)and (max-width:1100px){.testimonial-card{min-width:calc((100% - 20px)/2)}}
+
 /* RESPONSIVE */
 @media(max-width:900px){
   .hero-grid{grid-template-columns:1fr;text-align:center}
@@ -856,6 +880,86 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:60px
   </div>
 </section>
 
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="testimonials-inner">
+    <div class="reveal" style="text-align:center">
+      <div class="section-label">💬 آراء المستخدمين</div>
+      <h2 class="section-title">ماذا يقول عنا المستخدمون؟</h2>
+      <p class="section-sub">آلاف المغاربة يثقون في Matric Nejma 6 لمشاهدة المباريات — هذه بعض آرائهم.</p>
+    </div>
+    <div class="testimonials-carousel reveal" style="transition-delay:.1s">
+      <div class="testimonials-track" id="testimonialsTrack">
+        <div class="testimonial-card">
+          <div class="testimonial-top">
+            <div class="testimonial-avatar" style="background:linear-gradient(135deg,#7c3aed,#a78bfa)">م</div>
+            <div class="testimonial-info">
+              <div class="testimonial-name">محمد أ.</div>
+              <div class="testimonial-stars">★★★★★</div>
+            </div>
+          </div>
+          <p class="testimonial-text">تطبيق رائع جداً! بفضله أشاهد جميع مباريات كأس العالم 2026 بدون أي مشاكل. شكراً لفريق Matric Nejma 6 على هذا العمل الممتاز.</p>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-top">
+            <div class="testimonial-avatar" style="background:linear-gradient(135deg,#e11d48,#fb7185)">س</div>
+            <div class="testimonial-info">
+              <div class="testimonial-name">سارة م.</div>
+              <div class="testimonial-stars">★★★★★</div>
+            </div>
+          </div>
+          <p class="testimonial-text">أفضل تطبيق IPTV جربته على الإطلاق. الجودة ممتازة والسرعة لا تصدق. أنصح به جميع عشاق كرة القدم 👍</p>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-top">
+            <div class="testimonial-avatar" style="background:linear-gradient(135deg,#059669,#34d399)">ي</div>
+            <div class="testimonial-info">
+              <div class="testimonial-name">يوسف ف.</div>
+              <div class="testimonial-stars">★★★★★</div>
+            </div>
+          </div>
+          <p class="testimonial-text">من زمان وأنا أدور على تطبيق زي هذا. كل القنوات الرياضية في مكان واحد ومجاني بالكامل. شكراً من القلب ❤️</p>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-top">
+            <div class="testimonial-avatar" style="background:linear-gradient(135deg,#d97706,#fbbf24)">خ</div>
+            <div class="testimonial-info">
+              <div class="testimonial-name">خولة ن.</div>
+              <div class="testimonial-stars">★★★★★</div>
+            </div>
+          </div>
+          <p class="testimonial-text">والله تطبيق أكثر من رائع، سهل في الاستخدام ويدعم كل البطولات. يعطيكم الصحة على هذا العمل المتميز.</p>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-top">
+            <div class="testimonial-avatar" style="background:linear-gradient(135deg,#2563eb,#60a5fa)">أ</div>
+            <div class="testimonial-info">
+              <div class="testimonial-name">أمين ر.</div>
+              <div class="testimonial-stars">★★★★★</div>
+            </div>
+          </div>
+          <p class="testimonial-text">تطبيق خرافي! جربته مع نجمة 6 وشغال بدون تقطيع ولا أي مشكلة. أصبحت أشاهد المباريات وأنا مرتاح. شكراً.</p>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-top">
+            <div class="testimonial-avatar" style="background:linear-gradient(135deg,#7c3aed,#c084fc)">ف</div>
+            <div class="testimonial-info">
+              <div class="testimonial-name">فاطمة ز.</div>
+              <div class="testimonial-stars">★★★★★</div>
+            </div>
+          </div>
+          <p class="testimonial-text">تطبيق رائع ومفيد جداً، التحميل سريع والتثبيت سهل. شكراً Matric Nejma 6 على هذا المجهود الكبير. نتمنى لكم المزيد من النجاح.</p>
+        </div>
+      </div>
+      <div class="testimonial-arrows">
+        <button class="testimonial-arrow" id="testPrev" aria-label="السابق">‹</button>
+        <button class="testimonial-arrow" id="testNext" aria-label="التالي">›</button>
+      </div>
+      <div class="testimonial-dots" id="testDots"></div>
+    </div>
+  </div>
+</section>
+
 <!-- DOWNLOAD -->
 <section class="download" id="download">
   <div class="download-inner">
@@ -1123,6 +1227,26 @@ function updateProgress(){
     cu.style.animation='fadeUp .5s ease both';
   }
 }
+
+// TESTIMONIALS CAROUSEL
+(function(){
+  const track=document.getElementById('testimonialsTrack');
+  const prev=document.getElementById('testPrev');
+  const next=document.getElementById('testNext');
+  const dots=document.getElementById('testDots');
+  if(!track||!prev||!next||!dots)return;
+  const cards=track.querySelectorAll('.testimonial-card');
+  const total=cards.length;
+  let idx=0,auto;
+  function getVisible(){const w=track.offsetWidth;const cw=cards[0]?.offsetWidth||320;const gap=20;return Math.max(1,Math.floor((w+gap)/(cw+gap)))}
+  function go(i){const v=getVisible();const max=Math.max(0,total-v);idx=Math.max(0,Math.min(i,max));track.style.transform='translateX(-'+(idx*(100/v))+'%)';dots.querySelectorAll('.testimonial-dot').forEach((d,j)=>d.classList.toggle('active',j===idx))}
+  function buildDots(){const v=getVisible();const count=Math.max(1,total-v+1);dots.innerHTML='';for(let i=0;i<count;i++){const d=document.createElement('button');d.className='testimonial-dot'+(i===idx?' active':'');d.setAttribute('aria-label','الانتقال إلى '+(i+1));d.addEventListener('click',()=>{go(i);resetAuto()});dots.appendChild(d)}}
+  function resetAuto(){clearInterval(auto);auto=setInterval(()=>{const v=getVisible();const max=Math.max(0,total-v);idx>=max?go(0):go(idx+1)},4000)}
+  prev.addEventListener('click',()=>{const v=getVisible();go(idx-1);resetAuto()});
+  next.addEventListener('click',()=>{go(idx+1);resetAuto()});
+  window.addEventListener('resize',()=>{go(idx);buildDots()});
+  buildDots();resetAuto();
+})();
 </script>
 </body>
 </html>
