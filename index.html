@@ -180,7 +180,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://oevnahgzuqvdoatcfoat.supabase.co">
 <link rel="dns-prefetch" href="https://upload.wikimedia.org">
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Barlow+Condensed:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Barlow+Condensed:wght@400;600;700;800;900&family=Cairo:wght@700;800;900&display=swap" rel="stylesheet">
 
 <style>
 :root {
@@ -324,9 +324,9 @@ section{position:relative;z-index:1}
 .stats-grid{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr)}
 .stat-item{text-align:center;padding:20px;position:relative}
 .stat-item:not(:last-child)::after{content:'';position:absolute;left:0;top:20%;bottom:20%;width:1px;background:var(--border)}
-.stat-num{font-family:'Barlow Condensed',sans-serif;font-size:52px;font-weight:900;line-height:1;color:var(--white);margin-bottom:6px}
-.stat-num .unit{color:var(--purple)}
-.stat-label{font-size:14px;color:var(--muted);font-weight:500}
+.stat-num{font-family:'Cairo',sans-serif;font-size:52px;font-weight:900;line-height:1;color:var(--white);margin-bottom:6px;letter-spacing:-1px}
+.stat-num .unit{color:var(--purple);font-family:'Barlow Condensed',sans-serif;font-size:28px}
+.stat-label{font-family:'Cairo',sans-serif;font-size:15px;color:var(--muted);font-weight:700;letter-spacing:.5px}
 
 /* FEATURES */
 .features{padding:110px 5%}
@@ -476,27 +476,23 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:60px
 
 /* TESTIMONIALS */
 .testimonials{background:var(--surface);padding:80px 5%;position:relative;z-index:1;overflow:hidden}
-.testimonials-inner{max-width:1100px;margin:0 auto}
-.testimonials-carousel{position:relative;margin-top:40px}
-.testimonials-track{display:flex;gap:20px;transition:transform .5s cubic-bezier(.25,.46,.45,.94);will-change:transform}
-.testimonial-card{min-width:calc((100% - 40px)/3);background:var(--surface2);border:1px solid var(--border);border-radius:20px;padding:28px 24px;transition:all .3s;position:relative}
-.testimonial-card:hover{border-color:rgba(124,58,237,.35);transform:translateY(-4px)}
-.testimonial-top{display:flex;align-items:center;gap:14px;margin-bottom:16px}
-.testimonial-avatar{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:20px;color:#fff;flex-shrink:0}
-.testimonial-info{flex:1}
-.testimonial-name{font-size:15px;font-weight:700;color:var(--white);margin-bottom:2px}
-.testimonial-stars{font-size:12px;color:var(--gold);letter-spacing:2px}
-.testimonial-text{font-size:14px;color:var(--muted);line-height:1.7;font-style:italic}
-.testimonial-text::before{content:'"';opacity:.4}
-.testimonial-text::after{content:'"';opacity:.4}
-.testimonial-arrows{display:flex;justify-content:center;gap:12px;margin-top:32px}
-.testimonial-arrow{width:44px;height:44px;border-radius:12px;background:var(--surface3);border:1px solid var(--border);color:var(--muted);font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .25s}
+.testimonials-inner{max-width:700px;margin:0 auto}
+.testimonial-stage{position:relative;margin-top:40px;min-height:280px}
+.testimonial-card{position:absolute;inset:0;background:var(--surface2);border:1px solid var(--border);border-radius:24px;padding:36px 32px;transition:opacity .5s ease,transform .5s ease;opacity:0;transform:scale(.92);pointer-events:none;display:flex;flex-direction:column;align-items:center;text-align:center}
+.testimonial-card.active{opacity:1;transform:scale(1);pointer-events:auto;position:relative}
+.testimonial-avatar{width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Cairo',sans-serif;font-weight:900;font-size:26px;color:#fff;margin-bottom:14px;box-shadow:0 0 24px rgba(124,58,237,.3)}
+.testimonial-name{font-family:'Cairo',sans-serif;font-size:18px;font-weight:800;color:var(--white);margin-bottom:4px}
+.testimonial-stars{font-size:16px;color:var(--gold);letter-spacing:3px;margin-bottom:18px}
+.testimonial-text{font-family:'Cairo',sans-serif;font-size:17px;color:var(--muted);line-height:1.8;max-width:520px;font-weight:500}
+.testimonial-text::before{content:'"';opacity:.4;font-size:22px}
+.testimonial-text::after{content:'"';opacity:.4;font-size:22px}
+.testimonial-controls{display:flex;align-items:center;justify-content:center;gap:20px;margin-top:28px}
+.testimonial-arrow{width:46px;height:46px;border-radius:14px;background:var(--surface3);border:1px solid var(--border);color:var(--muted);font-size:22px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .25s;font-family:'Cairo',sans-serif}
 .testimonial-arrow:hover{background:var(--purple);color:#fff;border-color:var(--purple);transform:scale(1.05)}
-.testimonial-dots{display:flex;justify-content:center;gap:8px;margin-top:18px}
-.testimonial-dot{width:8px;height:8px;border-radius:50%;background:var(--surface4);border:none;cursor:pointer;transition:all .3s;padding:0}
-.testimonial-dot.active{background:var(--purple);width:24px;border-radius:4px}
-@media(max-width:900px){.testimonial-card{min-width:calc(100% - 0px)}}
-@media(min-width:901px)and (max-width:1100px){.testimonial-card{min-width:calc((100% - 20px)/2)}}
+.testimonial-dots{display:flex;gap:8px}
+.testimonial-dot{width:10px;height:10px;border-radius:50%;background:var(--surface4);border:none;cursor:pointer;transition:all .3s;padding:0}
+.testimonial-dot.active{background:var(--purple);width:28px;border-radius:5px}
+.testimonial-count{font-family:'Cairo',sans-serif;font-size:13px;color:var(--muted);font-weight:700}
 
 /* RESPONSIVE */
 @media(max-width:900px){
@@ -888,74 +884,49 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:60px
       <h2 class="section-title">ماذا يقول عنا المستخدمون؟</h2>
       <p class="section-sub">آلاف المغاربة يثقون في Matric Nejma 6 لمشاهدة المباريات — هذه بعض آرائهم.</p>
     </div>
-    <div class="testimonials-carousel reveal" style="transition-delay:.1s">
-      <div class="testimonials-track" id="testimonialsTrack">
-        <div class="testimonial-card">
-          <div class="testimonial-top">
-            <div class="testimonial-avatar" style="background:linear-gradient(135deg,#7c3aed,#a78bfa)">م</div>
-            <div class="testimonial-info">
-              <div class="testimonial-name">محمد أ.</div>
-              <div class="testimonial-stars">★★★★★</div>
-            </div>
-          </div>
-          <p class="testimonial-text">تطبيق رائع جداً! بفضله أشاهد جميع مباريات كأس العالم 2026 بدون أي مشاكل. شكراً لفريق Matric Nejma 6 على هذا العمل الممتاز.</p>
-        </div>
-        <div class="testimonial-card">
-          <div class="testimonial-top">
-            <div class="testimonial-avatar" style="background:linear-gradient(135deg,#e11d48,#fb7185)">س</div>
-            <div class="testimonial-info">
-              <div class="testimonial-name">سارة م.</div>
-              <div class="testimonial-stars">★★★★★</div>
-            </div>
-          </div>
-          <p class="testimonial-text">أفضل تطبيق IPTV جربته على الإطلاق. الجودة ممتازة والسرعة لا تصدق. أنصح به جميع عشاق كرة القدم 👍</p>
-        </div>
-        <div class="testimonial-card">
-          <div class="testimonial-top">
-            <div class="testimonial-avatar" style="background:linear-gradient(135deg,#059669,#34d399)">ي</div>
-            <div class="testimonial-info">
-              <div class="testimonial-name">يوسف ف.</div>
-              <div class="testimonial-stars">★★★★★</div>
-            </div>
-          </div>
-          <p class="testimonial-text">من زمان وأنا أدور على تطبيق زي هذا. كل القنوات الرياضية في مكان واحد ومجاني بالكامل. شكراً من القلب ❤️</p>
-        </div>
-        <div class="testimonial-card">
-          <div class="testimonial-top">
-            <div class="testimonial-avatar" style="background:linear-gradient(135deg,#d97706,#fbbf24)">خ</div>
-            <div class="testimonial-info">
-              <div class="testimonial-name">خولة ن.</div>
-              <div class="testimonial-stars">★★★★★</div>
-            </div>
-          </div>
-          <p class="testimonial-text">والله تطبيق أكثر من رائع، سهل في الاستخدام ويدعم كل البطولات. يعطيكم الصحة على هذا العمل المتميز.</p>
-        </div>
-        <div class="testimonial-card">
-          <div class="testimonial-top">
-            <div class="testimonial-avatar" style="background:linear-gradient(135deg,#2563eb,#60a5fa)">أ</div>
-            <div class="testimonial-info">
-              <div class="testimonial-name">أمين ر.</div>
-              <div class="testimonial-stars">★★★★★</div>
-            </div>
-          </div>
-          <p class="testimonial-text">تطبيق خرافي! جربته مع نجمة 6 وشغال بدون تقطيع ولا أي مشكلة. أصبحت أشاهد المباريات وأنا مرتاح. شكراً.</p>
-        </div>
-        <div class="testimonial-card">
-          <div class="testimonial-top">
-            <div class="testimonial-avatar" style="background:linear-gradient(135deg,#7c3aed,#c084fc)">ف</div>
-            <div class="testimonial-info">
-              <div class="testimonial-name">فاطمة ز.</div>
-              <div class="testimonial-stars">★★★★★</div>
-            </div>
-          </div>
-          <p class="testimonial-text">تطبيق رائع ومفيد جداً، التحميل سريع والتثبيت سهل. شكراً Matric Nejma 6 على هذا المجهود الكبير. نتمنى لكم المزيد من النجاح.</p>
-        </div>
+    <div class="testimonial-stage reveal" style="transition-delay:.1s">
+      <div class="testimonial-card active" data-idx="0">
+        <div class="testimonial-avatar" style="background:linear-gradient(135deg,#7c3aed,#a78bfa)">م</div>
+        <div class="testimonial-name">محمد أ.</div>
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">تطبيق رائع جداً! بفضله أشاهد جميع مباريات كأس العالم 2026 بدون أي مشاكل. شكراً لفريق Matric Nejma 6 على هذا العمل الممتاز.</p>
       </div>
-      <div class="testimonial-arrows">
-        <button class="testimonial-arrow" id="testPrev" aria-label="السابق">‹</button>
-        <button class="testimonial-arrow" id="testNext" aria-label="التالي">›</button>
+      <div class="testimonial-card" data-idx="1">
+        <div class="testimonial-avatar" style="background:linear-gradient(135deg,#e11d48,#fb7185)">س</div>
+        <div class="testimonial-name">سارة م.</div>
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">أفضل تطبيق IPTV جربته على الإطلاق. الجودة ممتازة والسرعة لا تصدق. أنصح به جميع عشاق كرة القدم 👍</p>
       </div>
+      <div class="testimonial-card" data-idx="2">
+        <div class="testimonial-avatar" style="background:linear-gradient(135deg,#059669,#34d399)">ي</div>
+        <div class="testimonial-name">يوسف ف.</div>
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">من زمان وأنا أدور على تطبيق زي هذا. كل القنوات الرياضية في مكان واحد ومجاني بالكامل. شكراً من القلب ❤️</p>
+      </div>
+      <div class="testimonial-card" data-idx="3">
+        <div class="testimonial-avatar" style="background:linear-gradient(135deg,#d97706,#fbbf24)">خ</div>
+        <div class="testimonial-name">خولة ن.</div>
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">والله تطبيق أكثر من رائع، سهل في الاستخدام ويدعم كل البطولات. يعطيكم الصحة على هذا العمل المتميز.</p>
+      </div>
+      <div class="testimonial-card" data-idx="4">
+        <div class="testimonial-avatar" style="background:linear-gradient(135deg,#2563eb,#60a5fa)">أ</div>
+        <div class="testimonial-name">أمين ر.</div>
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">تطبيق خرافي! جربته مع نجمة 6 وشغال بدون تقطيع ولا أي مشكلة. أصبحت أشاهد المباريات وأنا مرتاح. شكراً.</p>
+      </div>
+      <div class="testimonial-card" data-idx="5">
+        <div class="testimonial-avatar" style="background:linear-gradient(135deg,#7c3aed,#c084fc)">ف</div>
+        <div class="testimonial-name">فاطمة ز.</div>
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">تطبيق رائع ومفيد جداً، التحميل سريع والتثبيت سهل. شكراً Matric Nejma 6 على هذا المجهود الكبير. نتمنى لكم المزيد من النجاح.</p>
+      </div>
+    </div>
+    <div class="testimonial-controls reveal" style="transition-delay:.2s">
+      <button class="testimonial-arrow" id="testPrev" aria-label="السابق">‹</button>
       <div class="testimonial-dots" id="testDots"></div>
+      <span class="testimonial-count" id="testCount">1 / 6</span>
+      <button class="testimonial-arrow" id="testNext" aria-label="التالي">›</button>
     </div>
   </div>
 </section>
@@ -1228,23 +1199,36 @@ function updateProgress(){
   }
 }
 
-// TESTIMONIALS CAROUSEL
+// TESTIMONIALS POPUP
 (function(){
-  const track=document.getElementById('testimonialsTrack');
+  const cards=document.querySelectorAll('.testimonial-card');
+  const dots=document.getElementById('testDots');
   const prev=document.getElementById('testPrev');
   const next=document.getElementById('testNext');
-  const dots=document.getElementById('testDots');
-  if(!track||!prev||!next||!dots)return;
-  const cards=track.querySelectorAll('.testimonial-card');
+  const count=document.getElementById('testCount');
+  if(!cards.length||!dots||!prev||!next)return;
   const total=cards.length;
   let idx=0,auto;
-  function getVisible(){const w=track.offsetWidth;const cw=cards[0]?.offsetWidth||320;const gap=20;return Math.max(1,Math.floor((w+gap)/(cw+gap)))}
-  function go(i){const v=getVisible();const max=Math.max(0,total-v);idx=Math.max(0,Math.min(i,max));track.style.transform='translateX(-'+(idx*(100/v))+'%)';dots.querySelectorAll('.testimonial-dot').forEach((d,j)=>d.classList.toggle('active',j===idx))}
-  function buildDots(){const v=getVisible();const count=Math.max(1,total-v+1);dots.innerHTML='';for(let i=0;i<count;i++){const d=document.createElement('button');d.className='testimonial-dot'+(i===idx?' active':'');d.setAttribute('aria-label','الانتقال إلى '+(i+1));d.addEventListener('click',()=>{go(i);resetAuto()});dots.appendChild(d)}}
-  function resetAuto(){clearInterval(auto);auto=setInterval(()=>{const v=getVisible();const max=Math.max(0,total-v);idx>=max?go(0):go(idx+1)},4000)}
-  prev.addEventListener('click',()=>{const v=getVisible();go(idx-1);resetAuto()});
-  next.addEventListener('click',()=>{go(idx+1);resetAuto()});
-  window.addEventListener('resize',()=>{go(idx);buildDots()});
+  function show(i){
+    cards.forEach(c=>c.classList.remove('active'));
+    idx=(i+total)%total;
+    cards[idx].classList.add('active');
+    dots.querySelectorAll('.testimonial-dot').forEach((d,j)=>d.classList.toggle('active',j===idx));
+    if(count)count.textContent=(idx+1)+' / '+total;
+  }
+  function buildDots(){
+    dots.innerHTML='';
+    for(let i=0;i<total;i++){
+      const d=document.createElement('button');
+      d.className='testimonial-dot'+(i===idx?' active':'');
+      d.setAttribute('aria-label','الانتقال إلى '+(i+1));
+      d.addEventListener('click',()=>{show(i);resetAuto()});
+      dots.appendChild(d);
+    }
+  }
+  function resetAuto(){clearInterval(auto);auto=setInterval(()=>show(idx+1),5000)}
+  prev.addEventListener('click',()=>{show(idx-1);resetAuto()});
+  next.addEventListener('click',()=>{show(idx+1);resetAuto()});
   buildDots();resetAuto();
 })();
 </script>
