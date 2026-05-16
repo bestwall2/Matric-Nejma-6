@@ -81,6 +81,8 @@ nav.scrolled{background:rgba(5,4,10,0.97)}
 .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 50px rgba(124,58,237,.55)}
 .btn-secondary{display:inline-flex;align-items:center;gap:10px;background:transparent;color:var(--text);font-family:'Tajawal',sans-serif;font-size:15px;font-weight:600;padding:14px 22px;border-radius:12px;text-decoration:none;border:1px solid var(--border2);cursor:pointer;transition:all .25s}
 .btn-secondary:hover{border-color:rgba(124,58,237,.4);background:rgba(124,58,237,.06)}
+.btn-code{display:inline-flex;align-items:center;gap:10px;background:rgba(245,158,11,.1);color:var(--gold);font-family:'Tajawal',sans-serif;font-size:15px;font-weight:700;padding:14px 22px;border-radius:12px;text-decoration:none;border:1px solid rgba(245,158,11,.3);cursor:pointer;transition:all .25s}
+.btn-code:hover{background:rgba(245,158,11,.18);transform:translateY(-1px);box-shadow:0 4px 22px rgba(245,158,11,.2)}
 
 .social-row{display:flex;gap:10px;margin-top:20px;animation:fadeUp .7s .35s ease both;flex-wrap:wrap}
 .social-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:10px;text-decoration:none;font-weight:700;font-size:14px;font-family:'Tajawal',sans-serif;transition:all .25s}
@@ -112,7 +114,7 @@ nav.scrolled{background:rgba(5,4,10,0.97)}
 .phone-match-title{text-align:center;font-size:8px;font-weight:700;color:#a78bfa;margin-bottom:8px;letter-spacing:1px}
 .phone-match-teams{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
 .phone-team{text-align:center}
-.phone-team-e{font-size:22px}
+.phone-team-logo{width:28px;height:28px;object-fit:contain;display:block;margin:0 auto 3px}
 .phone-team-n{font-size:8px;color:white;font-weight:700}
 .phone-live-badge{background:var(--red);color:white;font-size:7px;font-weight:700;padding:3px 7px;border-radius:5px}
 .phone-match-meta{text-align:center;font-size:7px;color:#a78bfa}
@@ -193,39 +195,14 @@ section{position:relative;z-index:1}
 .step-title{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:800;color:var(--white);margin-bottom:5px}
 .step-desc{font-size:14px;color:var(--muted);line-height:1.6}
 
-/* REWARD */
-.reward-box{background:var(--surface2);border:1px solid var(--border);border-radius:20px;overflow:hidden}
-.reward-header{background:linear-gradient(135deg,var(--purple-dark),var(--purple));padding:22px 26px}
-.reward-header h3{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:900;color:white;margin-bottom:5px}
-.reward-header p{font-size:13px;color:rgba(255,255,255,.72);line-height:1.55}
-.rpw{padding:18px 26px 14px}
-.rpl{display:flex;justify-content:space-between;font-size:13px;color:var(--muted);margin-bottom:8px}
-.rpb{height:8px;background:var(--surface4);border-radius:10px;overflow:hidden}
-.rpf{height:100%;background:linear-gradient(90deg,var(--purple),#a78bfa);border-radius:10px;width:0%;transition:width .6s ease}
-.rtasks{padding:0 26px 18px}
-.task-item{display:flex;align-items:center;gap:14px;padding:12px 13px;border-radius:12px;margin-bottom:7px;background:var(--surface3);border:1px solid var(--border);cursor:pointer;transition:all .25s;text-decoration:none;color:inherit}
-.task-item:hover{border-color:rgba(124,58,237,.35);background:rgba(124,58,237,.08);transform:translateX(-2px)}
-.task-item.done{background:rgba(124,58,237,.08);border-color:rgba(124,58,237,.3)}
-.task-icon{font-size:20px;flex-shrink:0;width:34px;text-align:center}
-.task-info{flex:1}
-.task-title{font-size:14px;font-weight:700;color:var(--text);margin-bottom:2px}
-.task-sub{font-size:11px;color:var(--muted)}
-.task-check{width:26px;height:26px;border-radius:8px;background:var(--surface4);border:2px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:13px;transition:all .25s}
-.task-item.done .task-check{background:var(--purple);border-color:var(--purple);color:white}
-.rcr{padding:0 26px 26px}
-.clocked{text-align:center;padding:22px;background:var(--surface3);border-radius:14px;border:2px dashed rgba(124,58,237,.2)}
-.clocked-icon{font-size:36px;margin-bottom:7px}
-.clocked-text{font-size:13px;color:var(--muted);line-height:1.5}
-.clocked-count{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:900;color:var(--purple);margin-top:5px}
-.cunlocked{display:none;text-align:center}
-.code-display{background:var(--black);border:2px solid rgba(124,58,237,.4);border-radius:14px;padding:18px;margin-bottom:14px}
-.code-label-s{font-size:11px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin-bottom:8px}
-.code-val{font-family:'Barlow Condensed',sans-serif;font-size:36px;font-weight:900;color:var(--purple);letter-spacing:6px}
-.apk-btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;background:linear-gradient(135deg,var(--purple),var(--purple-mid));color:white;font-family:'Tajawal',sans-serif;font-size:17px;font-weight:700;padding:14px;border-radius:12px;text-decoration:none;border:none;cursor:pointer;transition:all .25s;box-shadow:0 4px 24px var(--purple-glow)}
-.apk-btn:hover{transform:translateY(-2px);box-shadow:0 8px 36px var(--purple-glow)}
-.install-note{display:flex;gap:10px;align-items:flex-start;background:rgba(245,158,11,.06);border:1px solid rgba(245,158,11,.15);border-radius:12px;padding:13px;margin-top:12px}
-.in-icon{font-size:15px;flex-shrink:0}
-.in-text{font-size:12px;color:rgba(245,158,11,.8);line-height:1.6}
+/* HOWTO RIGHT: code teaser box */
+.code-teaser{background:var(--surface2);border:1px solid var(--border);border-radius:20px;overflow:hidden;text-align:center;padding:40px 30px}
+.code-teaser-icon{font-size:56px;margin-bottom:16px}
+.code-teaser-title{font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:900;color:var(--white);margin-bottom:10px}
+.code-teaser-desc{font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:28px}
+.code-teaser-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;width:100%;background:linear-gradient(135deg,var(--gold),#d97706);color:#1a0a00;font-family:'Tajawal',sans-serif;font-size:17px;font-weight:800;padding:16px;border-radius:12px;text-decoration:none;border:none;cursor:pointer;transition:all .25s;box-shadow:0 4px 24px rgba(245,158,11,.35)}
+.code-teaser-btn:hover{transform:translateY(-2px);box-shadow:0 8px 36px rgba(245,158,11,.5)}
+.code-teaser-note{font-size:12px;color:var(--muted);margin-top:14px;line-height:1.5}
 
 /* SOCIAL SECTION */
 .social-section{padding:80px 5%;background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
@@ -283,6 +260,46 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:60px
 @keyframes modalIn{from{opacity:0;transform:scale(.9) translateY(20px)}to{opacity:1;transform:scale(1) translateY(0)}}
 .reveal{opacity:0;transform:translateY(38px);transition:opacity .7s ease,transform .7s ease}
 .reveal.visible{opacity:1;transform:translateY(0)}
+
+/* MODALS */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.88);backdrop-filter:blur(12px);z-index:1000;align-items:center;justify-content:center}
+.modal-overlay.active{display:flex}
+.modal-box{background:var(--surface2);border:1px solid var(--border);border-radius:24px;padding:36px;max-width:480px;width:90%;position:relative;animation:modalIn .3s ease;max-height:90vh;overflow-y:auto}
+.modal-close{position:absolute;top:14px;left:14px;width:32px;height:32px;background:var(--surface3);border:none;border-radius:8px;color:var(--muted);font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.modal-close:hover{background:var(--surface4);color:var(--white)}
+
+/* REWARD MODAL */
+.reward-modal-header{text-align:center;margin-bottom:20px}
+.reward-modal-header .icon{font-size:48px;margin-bottom:10px}
+.reward-modal-header h3{font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:900;color:var(--white);margin-bottom:6px}
+.reward-modal-header p{font-size:13px;color:var(--muted);line-height:1.55}
+.rpw{margin-bottom:14px}
+.rpl{display:flex;justify-content:space-between;font-size:13px;color:var(--muted);margin-bottom:8px}
+.rpb{height:8px;background:var(--surface4);border-radius:10px;overflow:hidden}
+.rpf{height:100%;background:linear-gradient(90deg,var(--purple),#a78bfa);border-radius:10px;width:0%;transition:width .6s ease}
+.rtasks{margin-bottom:16px}
+.task-item{display:flex;align-items:center;gap:14px;padding:12px 13px;border-radius:12px;margin-bottom:7px;background:var(--surface3);border:1px solid var(--border);cursor:pointer;transition:all .25s;text-decoration:none;color:inherit}
+.task-item:hover{border-color:rgba(124,58,237,.35);background:rgba(124,58,237,.08);transform:translateX(-2px)}
+.task-item.done{background:rgba(124,58,237,.08);border-color:rgba(124,58,237,.3)}
+.task-icon{font-size:20px;flex-shrink:0;width:34px;text-align:center}
+.task-info{flex:1}
+.task-title{font-size:14px;font-weight:700;color:var(--text);margin-bottom:2px}
+.task-sub{font-size:11px;color:var(--muted)}
+.task-check{width:26px;height:26px;border-radius:8px;background:var(--surface4);border:2px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:13px;transition:all .25s}
+.task-item.done .task-check{background:var(--purple);border-color:var(--purple);color:white}
+.clocked{text-align:center;padding:22px;background:var(--surface3);border-radius:14px;border:2px dashed rgba(124,58,237,.2)}
+.clocked-icon{font-size:36px;margin-bottom:7px}
+.clocked-text{font-size:13px;color:var(--muted);line-height:1.5}
+.clocked-count{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:900;color:var(--purple);margin-top:5px}
+.cunlocked{display:none;text-align:center}
+.code-display{background:var(--black);border:2px solid rgba(124,58,237,.4);border-radius:14px;padding:18px;margin-bottom:14px}
+.code-label-s{font-size:11px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin-bottom:8px}
+.code-val{font-family:'Barlow Condensed',sans-serif;font-size:36px;font-weight:900;color:var(--purple);letter-spacing:6px}
+.apk-btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;background:linear-gradient(135deg,var(--purple),var(--purple-mid));color:white;font-family:'Tajawal',sans-serif;font-size:17px;font-weight:700;padding:14px;border-radius:12px;text-decoration:none;border:none;cursor:pointer;transition:all .25s;box-shadow:0 4px 24px var(--purple-glow)}
+.apk-btn:hover{transform:translateY(-2px);box-shadow:0 8px 36px var(--purple-glow)}
+.install-note{display:flex;gap:10px;align-items:flex-start;background:rgba(245,158,11,.06);border:1px solid rgba(245,158,11,.15);border-radius:12px;padding:13px;margin-top:12px}
+.in-icon{font-size:15px;flex-shrink:0}
+.in-text{font-size:12px;color:rgba(245,158,11,.8);line-height:1.6}
 
 /* RESPONSIVE */
 @media(max-width:900px){
@@ -358,8 +375,8 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:60px
       <div class="hero-arabic">شاهد كل المباريات<br>بعرض نجمة ٦ فقط</div>
       <p class="hero-desc">أكثر من ١٠٠ قناة رياضية مشفرة ومفتوحة بجودة 4K — تشغّل بنجمة 6 على inwi وOrange، بدون تقطيع وبدون اشتراك باهظ.</p>
       <div class="hero-actions">
-        <button class="btn-primary" onclick="openModal()">📲 حمّل التطبيق مجاناً</button>
-        <a href="#features" class="btn-secondary">اكتشف المميزات ←</a>
+        <button class="btn-primary" onclick="openDownloadModal()">📲 حمّل التطبيق مجاناً</button>
+        <button class="btn-code" onclick="openRewardModal()">🎁 احصل على كود التفعيل</button>
       </div>
       <div class="social-row">
         <a href="https://whatsapp.com/channel/0029Vb6TnfbLo4hbsQzWTY2H" target="_blank" class="social-btn btn-wa">
@@ -398,18 +415,34 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:60px
             <div class="phone-match">
               <div class="phone-match-title">🇪🇸 الدوري الإسباني</div>
               <div class="phone-match-teams">
-                <div class="phone-team"><div class="phone-team-e">🔴</div><div class="phone-team-n">أ. مدريد</div></div>
+                <div class="phone-team">
+                  <img class="phone-team-logo" src="https://upload.wikimedia.org/wikipedia/en/5/56/Real_Madrid_CF.svg" alt="Real Madrid" onerror="this.style.display='none';this.nextSibling.style.display='block'">
+                  <span style="display:none;font-size:18px">⚪</span>
+                  <div class="phone-team-n">ريال مدريد</div>
+                </div>
                 <div class="phone-live-badge">جارية الآن</div>
-                <div class="phone-team"><div class="phone-team-e">🔴</div><div class="phone-team-n">أوساسونا</div></div>
+                <div class="phone-team">
+                  <img class="phone-team-logo" src="https://upload.wikimedia.org/wikipedia/en/f/f4/Atletico_Madrid_2017_logo.svg" alt="Atletico Madrid" onerror="this.style.display='none';this.nextSibling.style.display='block'">
+                  <span style="display:none;font-size:18px">🔴</span>
+                  <div class="phone-team-n">أتليتيكو</div>
+                </div>
               </div>
               <div class="phone-match-meta">🎙 محمد بركات · beIN 2 HD</div>
             </div>
             <div class="phone-match" style="border-color:rgba(124,58,237,.15)">
               <div class="phone-match-title">🏆 الدوري السعودي</div>
               <div class="phone-match-teams">
-                <div class="phone-team"><div class="phone-team-e">⚽</div><div class="phone-team-n">الهلال</div></div>
+                <div class="phone-team">
+                  <img class="phone-team-logo" src="https://upload.wikimedia.org/wikipedia/en/4/44/Al_Hilal_SFC_logo.svg" alt="Al Hilal" onerror="this.style.display='none';this.nextSibling.style.display='block'">
+                  <span style="display:none;font-size:18px">🔵</span>
+                  <div class="phone-team-n">الهلال</div>
+                </div>
                 <div class="phone-live-badge">جارية الآن</div>
-                <div class="phone-team"><div class="phone-team-e">👑</div><div class="phone-team-n">النصر</div></div>
+                <div class="phone-team">
+                  <img class="phone-team-logo" src="https://upload.wikimedia.org/wikipedia/en/7/7b/Al-Nassr_FC_Logo.svg" alt="Al Nassr" onerror="this.style.display='none';this.nextSibling.style.display='block'">
+                  <span style="display:none;font-size:18px">🟡</span>
+                  <div class="phone-team-n">النصر</div>
+                </div>
               </div>
               <div class="phone-match-meta">🎙 فارس عوض · TMNYH1 HD</div>
             </div>
@@ -529,7 +562,7 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:60px
   </div>
 </section>
 
-<!-- HOW TO + REWARD -->
+<!-- HOW TO -->
 <section class="howto" id="howto">
   <div class="howto-inner">
     <div>
@@ -541,8 +574,8 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:60px
         <li class="step reveal" style="transition-delay:.1s">
           <div class="step-num">1</div>
           <div>
-            <div class="step-title">🎁 أكمل المهام للحصول على الكود</div>
-            <p class="step-desc">افتح الروابط الستة في نظام المكافآت بجانبك للحصول على كود التفعيل مجاناً.</p>
+            <div class="step-title">🎁 احصل على كود التفعيل</div>
+            <p class="step-desc">اضغط على زر "احصل على كود التفعيل" وأكمل المهام الستة البسيطة للحصول على الكود مجاناً.</p>
           </div>
         </li>
         <li class="step reveal" style="transition-delay:.2s">
@@ -569,67 +602,14 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:60px
       </ul>
     </div>
 
-    <!-- REWARD SYSTEM -->
+    <!-- CODE TEASER -->
     <div class="reveal" style="transition-delay:.2s">
-      <div class="reward-box">
-        <div class="reward-header">
-          <h3>🎁 نظام المكافآت — احصل على الكود</h3>
-          <p>أكمل المهام الستة للحصول على كود التفعيل الحصري مجاناً</p>
-        </div>
-        <div class="rpw">
-          <div class="rpl"><span>تقدمك</span><span id="prog-text">0 / 6 مهام</span></div>
-          <div class="rpb"><div class="rpf" id="prog-fill"></div></div>
-        </div>
-        <div class="rtasks">
-          <a class="task-item" id="task-1" href="https://whatsapp.com/channel/0029Vb6TnfbLo4hbsQzWTY2H" target="_blank" onclick="completeTask(1)">
-            <div class="task-icon">💬</div>
-            <div class="task-info"><div class="task-title">تابع قناة واتساب</div><div class="task-sub">Matric Nejma 6 على WhatsApp</div></div>
-            <div class="task-check" id="check-1">○</div>
-          </a>
-          <a class="task-item" id="task-2" href="https://www.facebook.com/matricnejma6" target="_blank" onclick="completeTask(2)">
-            <div class="task-icon">👍</div>
-            <div class="task-info"><div class="task-title">أعجبني صفحة فيسبوك</div><div class="task-sub">Matric Nejma 6 على Facebook</div></div>
-            <div class="task-check" id="check-2">○</div>
-          </a>
-          <a class="task-item" id="task-3" href="https://www.matricnjm.online/" target="_blank" onclick="completeTask(3)">
-            <div class="task-icon">🌐</div>
-            <div class="task-info"><div class="task-title">زر الموقع الرسمي</div><div class="task-sub">matricnjm.online</div></div>
-            <div class="task-check" id="check-3">○</div>
-          </a>
-          <a class="task-item" id="task-4" href="https://www.mediafire.com/file/qmm5v6k78wr0a8b/Matric+Nejma+6+V4.0.apk/file" target="_blank" onclick="completeTask(4)">
-            <div class="task-icon">📥</div>
-            <div class="task-info"><div class="task-title">افتح رابط التحميل</div><div class="task-sub">Matric Nejma 6 APK v4.0 — MediaFire</div></div>
-            <div class="task-check" id="check-4">○</div>
-          </a>
-          <a class="task-item" id="task-5" href="https://www.matricnjm.online/blog/matric-nejma6-watch-guide-2026" target="_blank" onclick="completeTask(5)">
-            <div class="task-icon">📖</div>
-            <div class="task-info"><div class="task-title">اقرأ دليل المشاهدة 2026</div><div class="task-sub">كل ما تحتاجه عن البث الرياضي</div></div>
-            <div class="task-check" id="check-5">○</div>
-          </a>
-          <a class="task-item" id="task-6" href="https://www.matricnjm.online/blog.html" target="_blank" onclick="completeTask(6)">
-            <div class="task-icon">📰</div>
-            <div class="task-info"><div class="task-title">تصفّح المدونة الرياضية</div><div class="task-sub">آخر الأخبار والتحليلات</div></div>
-            <div class="task-check" id="check-6">○</div>
-          </a>
-        </div>
-        <div class="rcr">
-          <div class="clocked" id="code-locked">
-            <div class="clocked-icon">🔒</div>
-            <div class="clocked-text">أكمل جميع المهام للحصول على كود التفعيل</div>
-            <div class="clocked-count" id="remaining-count">6 مهام متبقية</div>
-          </div>
-          <div class="cunlocked" id="code-unlocked">
-            <div class="code-display">
-              <div class="code-label-s">🎉 كود التفعيل الحصري</div>
-              <div class="code-val">M-7700-X92</div>
-            </div>
-            <a href="https://www.mediafire.com/file/qmm5v6k78wr0a8b/Matric+Nejma+6+V4.0.apk/file" class="apk-btn" target="_blank">📲 تحميل APK الآن — مجاناً</a>
-            <div class="install-note" style="margin-top:12px">
-              <div class="in-icon">⚠️</div>
-              <div class="in-text">التطبيق غير متوفر على Google Play — يجب تثبيته كـ APK. فعّل "مصادر غير معروفة" في الإعدادات أولاً.</div>
-            </div>
-          </div>
-        </div>
+      <div class="code-teaser">
+        <div class="code-teaser-icon">🎁</div>
+        <div class="code-teaser-title">احصل على كود التفعيل</div>
+        <p class="code-teaser-desc">أكمل 6 مهام بسيطة وسريعة للحصول على كود التفعيل الحصري مجاناً. الكود ضروري لتشغيل التطبيق.</p>
+        <button class="code-teaser-btn" onclick="openRewardModal()">🔓 احصل على الكود الآن</button>
+        <p class="code-teaser-note">⚡ يستغرق أقل من دقيقتين · مجاناً 100%</p>
       </div>
       <div class="install-note" style="margin-top:14px;border-color:rgba(124,58,237,.2);background:rgba(124,58,237,.04)">
         <div class="in-icon">📱</div>
@@ -675,7 +655,10 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:60px
       <div class="section-label">📲 تحميل مجاني</div>
       <h2 class="download-big-title"><span class="wp">DOWNLOAD</span><br>THE APP</h2>
       <p class="download-desc">انضم إلى آلاف المغاربة الذين يشاهدون مبارياتهم المفضلة يومياً مع Matric Nejma 6 — مجاناً، بدون اشتراك مكلف.</p>
-      <button class="download-btn" onclick="openModal()">⬇ تحميل APK — مجاناً 100%</button>
+      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:22px">
+        <button class="download-btn" onclick="openDownloadModal()">⬇ تحميل APK — مجاناً 100%</button>
+        <button class="btn-code" style="font-size:16px;padding:18px 28px;border-radius:14px" onclick="openRewardModal()">🎁 احصل على الكود</button>
+      </div>
       <div class="download-meta">
         <div class="dm-item">✅ مجاني 100%</div>
         <div class="dm-item">📱 Android 5.0+</div>
@@ -728,23 +711,84 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:60px
   </div>
 </footer>
 
-<!-- MODAL -->
-<div id="modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.88);backdrop-filter:blur(12px);z-index:1000;align-items:center;justify-content:center" onclick="closeModalOutside(event)">
-  <div style="background:var(--surface2);border:1px solid var(--border);border-radius:24px;padding:36px;max-width:460px;width:90%;position:relative;animation:modalIn .3s ease">
-    <button onclick="closeModal()" style="position:absolute;top:14px;left:14px;width:32px;height:32px;background:var(--surface3);border:none;border-radius:8px;color:var(--muted);font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s">✕</button>
+<!-- DOWNLOAD MODAL (no code) -->
+<div id="download-modal" class="modal-overlay" onclick="closeDownloadModalOutside(event)">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeDownloadModal()">✕</button>
     <div style="font-size:46px;text-align:center;margin-bottom:12px">📲</div>
     <h3 style="font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:900;color:var(--white);text-align:center;margin-bottom:8px">تحميل Matric Nejma 6</h3>
-    <p style="font-size:14px;color:var(--muted);text-align:center;margin-bottom:22px;line-height:1.6">احصل على ملف APK وكود التفعيل الرسمي لبدء المشاهدة الآن.</p>
-    <div style="background:var(--black);border:2px solid rgba(124,58,237,.35);border-radius:14px;padding:18px;text-align:center;margin-bottom:20px">
-      <div style="font-size:11px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin-bottom:8px">🎁 كود التفعيل</div>
-      <div style="font-family:'Barlow Condensed',sans-serif;font-size:34px;font-weight:900;color:var(--purple);letter-spacing:5px">M-7700-X92</div>
-    </div>
-    <a href="https://www.mediafire.com/file/qmm5v6k78wr0a8b/Matric+Nejma+6+V4.0.apk/file" target="_blank" style="display:flex;align-items:center;justify-content:center;gap:10px;width:100%;background:linear-gradient(135deg,var(--purple),var(--purple-mid));color:white;font-family:'Tajawal',sans-serif;font-size:17px;font-weight:800;padding:15px;border-radius:12px;text-decoration:none;border:none;cursor:pointer;box-shadow:0 4px 24px var(--purple-glow);margin-bottom:12px">⬇ تحميل APK الآن</a>
+    <p style="font-size:14px;color:var(--muted);text-align:center;margin-bottom:22px;line-height:1.6">احصل على ملف APK الرسمي لبدء مشاهدة أكثر من 100 قناة رياضية مجاناً.</p>
+    <a href="https://www.mediafire.com/file/qmm5v6k78wr0a8b/Matric+Nejma+6+V4.0.apk/file" target="_blank" style="display:flex;align-items:center;justify-content:center;gap:10px;width:100%;background:linear-gradient(135deg,var(--purple),var(--purple-mid));color:white;font-family:'Tajawal',sans-serif;font-size:17px;font-weight:800;padding:15px;border-radius:12px;text-decoration:none;border:none;cursor:pointer;box-shadow:0 4px 24px var(--purple-glow);margin-bottom:14px" onclick="closeDownloadModal()">⬇ تحميل APK الآن</a>
+    <button onclick="closeDownloadModal();openRewardModal();" style="display:flex;align-items:center;justify-content:center;gap:10px;width:100%;background:rgba(245,158,11,.1);color:var(--gold);font-family:'Tajawal',sans-serif;font-size:15px;font-weight:700;padding:12px;border-radius:12px;border:1px solid rgba(245,158,11,.3);cursor:pointer;margin-bottom:14px;transition:all .25s">🎁 تحتاج كود التفعيل؟ احصل عليه هنا</button>
     <div style="display:flex;gap:10px">
       <a href="https://whatsapp.com/channel/0029Vb6TnfbLo4hbsQzWTY2H" target="_blank" style="flex:1;display:flex;align-items:center;justify-content:center;gap:6px;padding:10px;border-radius:10px;background:rgba(37,211,102,.1);color:var(--wa);border:1px solid rgba(37,211,102,.2);text-decoration:none;font-size:13px;font-weight:700;font-family:'Tajawal',sans-serif">💬 واتساب</a>
       <a href="https://www.facebook.com/matricnejma6" target="_blank" style="flex:1;display:flex;align-items:center;justify-content:center;gap:6px;padding:10px;border-radius:10px;background:rgba(24,119,242,.1);color:var(--fb);border:1px solid rgba(24,119,242,.2);text-decoration:none;font-size:13px;font-weight:700;font-family:'Tajawal',sans-serif">📘 فيسبوك</a>
     </div>
-    <p style="font-size:11px;color:var(--muted);text-align:center;margin-top:12px;line-height:1.5">بالضغط على التحميل أنت توافق على شروط الاستخدام. مخصص لأندرويد فقط.</p>
+    <p style="font-size:11px;color:var(--muted);text-align:center;margin-top:12px;line-height:1.5">مخصص لأندرويد 5.0 أو أحدث. حجم الملف: 25 MB.</p>
+  </div>
+</div>
+
+<!-- REWARD MODAL -->
+<div id="reward-modal" class="modal-overlay" onclick="closeRewardModalOutside(event)">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeRewardModal()">✕</button>
+    <div class="reward-modal-header">
+      <div class="icon">🎁</div>
+      <h3>نظام المكافآت</h3>
+      <p>أكمل المهام الستة للحصول على كود التفعيل الحصري مجاناً</p>
+    </div>
+    <div class="rpw">
+      <div class="rpl"><span>تقدمك</span><span id="prog-text">0 / 6 مهام</span></div>
+      <div class="rpb"><div class="rpf" id="prog-fill"></div></div>
+    </div>
+    <div class="rtasks">
+      <a class="task-item" id="task-1" href="https://omg10.com/4/10823569" target="_blank" onclick="completeTask(1)">
+        <div class="task-icon">🌐</div>
+        <div class="task-info"><div class="task-title">أكمل المهمة 1</div><div class="task-sub">افتح الرابط وانتظر ثوانٍ</div></div>
+        <div class="task-check" id="check-1">○</div>
+      </a>
+      <a class="task-item" id="task-2" href="https://omg10.com/4/10534480" target="_blank" onclick="completeTask(2)">
+        <div class="task-icon">🌐</div>
+        <div class="task-info"><div class="task-title">أكمل المهمة 2</div><div class="task-sub">افتح الرابط وانتظر ثوانٍ</div></div>
+        <div class="task-check" id="check-2">○</div>
+      </a>
+      <a class="task-item" id="task-3" href="https://omg10.com/4/10823571" target="_blank" onclick="completeTask(3)">
+        <div class="task-icon">🌐</div>
+        <div class="task-info"><div class="task-title">أكمل المهمة 3</div><div class="task-sub">افتح الرابط وانتظر ثوانٍ</div></div>
+        <div class="task-check" id="check-3">○</div>
+      </a>
+      <a class="task-item" id="task-4" href="https://omg10.com/4/10508415" target="_blank" onclick="completeTask(4)">
+        <div class="task-icon">🌐</div>
+        <div class="task-info"><div class="task-title">أكمل المهمة 4</div><div class="task-sub">افتح الرابط وانتظر ثوانٍ</div></div>
+        <div class="task-check" id="check-4">○</div>
+      </a>
+      <a class="task-item" id="task-5" href="https://omg10.com/4/10823593" target="_blank" onclick="completeTask(5)">
+        <div class="task-icon">🌐</div>
+        <div class="task-info"><div class="task-title">أكمل المهمة 5</div><div class="task-sub">افتح الرابط وانتظر ثوانٍ</div></div>
+        <div class="task-check" id="check-5">○</div>
+      </a>
+      <a class="task-item" id="task-6" href="https://omg10.com/4/10823570" target="_blank" onclick="completeTask(6)">
+        <div class="task-icon">🌐</div>
+        <div class="task-info"><div class="task-title">أكمل المهمة 6</div><div class="task-sub">افتح الرابط وانتظر ثوانٍ</div></div>
+        <div class="task-check" id="check-6">○</div>
+      </a>
+    </div>
+    <div id="code-locked" class="clocked">
+      <div class="clocked-icon">🔒</div>
+      <div class="clocked-text">أكمل جميع المهام للحصول على كود التفعيل</div>
+      <div class="clocked-count" id="remaining-count">6 مهام متبقية</div>
+    </div>
+    <div class="cunlocked" id="code-unlocked">
+      <div class="code-display">
+        <div class="code-label-s">🎉 كود التفعيل الحصري</div>
+        <div class="code-val">M-7700-X92</div>
+      </div>
+      <a href="https://www.mediafire.com/file/qmm5v6k78wr0a8b/Matric+Nejma+6+V4.0.apk/file" class="apk-btn" target="_blank">📲 تحميل APK الآن — مجاناً</a>
+      <div class="install-note">
+        <div class="in-icon">⚠️</div>
+        <div class="in-text">التطبيق غير متوفر على Google Play — يجب تثبيته كـ APK. فعّل "مصادر غير معروفة" في الإعدادات أولاً.</div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -772,11 +816,17 @@ const counters=document.querySelectorAll('.counter');
 const cobs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting&&!e.target.dataset.done){e.target.dataset.done='true';const target=+e.target.dataset.target,step=target/(1500/16);let cur=0;const t=setInterval(()=>{cur=Math.min(cur+step,target);e.target.textContent=Math.floor(cur);if(cur>=target)clearInterval(t)},16)}})},{threshold:.5});
 counters.forEach(c=>cobs.observe(c));
 
-// MODAL
-function openModal(){document.getElementById('modal').style.display='flex';document.body.style.overflow='hidden'}
-function closeModal(){document.getElementById('modal').style.display='none';document.body.style.overflow=''}
-function closeModalOutside(e){if(e.target===document.getElementById('modal'))closeModal()}
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+// DOWNLOAD MODAL
+function openDownloadModal(){document.getElementById('download-modal').classList.add('active');document.body.style.overflow='hidden'}
+function closeDownloadModal(){document.getElementById('download-modal').classList.remove('active');document.body.style.overflow=''}
+function closeDownloadModalOutside(e){if(e.target===document.getElementById('download-modal'))closeDownloadModal()}
+
+// REWARD MODAL
+function openRewardModal(){document.getElementById('reward-modal').classList.add('active');document.body.style.overflow='hidden'}
+function closeRewardModal(){document.getElementById('reward-modal').classList.remove('active');document.body.style.overflow=''}
+function closeRewardModalOutside(e){if(e.target===document.getElementById('reward-modal'))closeRewardModal()}
+
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeDownloadModal();closeRewardModal()}});
 
 // REWARD SYSTEM
 const tasksDone=new Set();
@@ -789,7 +839,7 @@ function completeTask(id){
       if(check)check.textContent='✓';
       updateProgress();
     }
-  },1500);
+  },1800);
 }
 function updateProgress(){
   const done=tasksDone.size,total=6,pct=(done/total)*100;
