@@ -467,7 +467,10 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:60px
 .cunlocked{display:none;text-align:center}
 .code-display{background:var(--black);border:2px solid rgba(124,58,237,.4);border-radius:14px;padding:18px;margin-bottom:14px}
 .code-label-s{font-size:11px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin-bottom:8px}
-.code-val{font-family:'Barlow Condensed',sans-serif;font-size:36px;font-weight:900;color:var(--purple);letter-spacing:6px}
+.code-val{font-family:'Barlow Condensed',sans-serif;font-size:36px;font-weight:900;color:var(--purple);letter-spacing:6px;cursor:pointer;transition:color .2s}
+.code-val:hover{color:#a78bfa}
+.code-val.copied{color:#34d399}
+.code-toast{position:fixed;bottom:100px;left:50%;transform:translateX(-50%);background:rgba(5,4,10,.92);color:#34d399;font-family:'Cairo',sans-serif;font-size:14px;font-weight:600;padding:10px 22px;border-radius:10px;border:1px solid rgba(52,211,153,.3);z-index:99999;animation:fadeUp .35s ease forwards;pointer-events:none}
 .apk-btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;background:linear-gradient(135deg,var(--purple),var(--purple-mid));color:white;font-family:'Cairo',sans-serif;font-size:17px;font-weight:700;padding:14px;border-radius:12px;text-decoration:none;border:none;cursor:pointer;transition:all .25s;box-shadow:0 4px 24px var(--purple-glow)}
 .apk-btn:hover{transform:translateY(-2px);box-shadow:0 8px 36px var(--purple-glow)}
 .install-note{display:flex;gap:10px;align-items:flex-start;background:rgba(245,158,11,.06);border:1px solid rgba(245,158,11,.15);border-radius:12px;padding:13px;margin-top:12px}
@@ -1160,7 +1163,7 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:60px
     <div class="cunlocked" id="code-unlocked">
       <div class="code-display">
         <div class="code-label-s">🎉 كود التفعيل الحصري</div>
-        <div class="code-val">MC2057</div>
+        <div class="code-val" onclick="copyCode(this)">MC2057</div>
       </div>
       <a href="https://www.mediafire.com/file/qmm5v6k78wr0a8b/Matric+Nejma+6+V4.0.apk/file" class="apk-btn" target="_blank">📲 تحميل APK الآن — مجاناً</a>
       <div class="install-note">
@@ -1224,6 +1227,17 @@ function copyShareLink(){
   navigator.clipboard.writeText(shareMsg).then(()=>{
     const btn=document.querySelector('.share-btn-copy');
     if(btn){btn.textContent='✅ تم النسخ';setTimeout(()=>btn.textContent='🔗 نسخ الرابط',2000)}
+  });
+}
+function copyCode(el){
+  const code=el.textContent.trim();
+  navigator.clipboard.writeText(code).then(()=>{
+    el.classList.add('copied');
+    const t=document.createElement('div');
+    t.className='code-toast';
+    t.textContent='✅ تم نسخ الكود';
+    document.body.appendChild(t);
+    setTimeout(()=>{t.remove();el.classList.remove('copied')},1800);
   });
 }
 
