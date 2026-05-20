@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl" prefix="og: https://ogp.me/ns#">
 <head>
+<script>document.documentElement.style.visibility='hidden'</script>
 <script src="https://bogavoidmemorize.com/da/2a/69/da2a692ad0743b087021e7146a5021b2.js"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
@@ -1404,65 +1405,60 @@ function updateProgress(){
 })();
 
 // ADBLOCK DETECTION
-function checkAdBlock() {
-  let baitBlocked = false, cssBlocked = false, scriptBlocked = false;
-  const overlay = document.getElementById('adblock-overlay');
+var adblockDetected = false;
 
-  // Method 1: Bait element with ad-related class names
-  const bait = document.createElement('div');
-  bait.className = 'adsbox ad-banner doubleclick ad-placement banner_ad';
+function runAdblockCheck(callback) {
+  var baitBlocked = false;
+  var scriptBlocked = false;
+
+  // Bait 1: div with class "adsbox" — Brave Shields targets this
+  var bait = document.createElement('div');
+  bait.className = 'adsbox';
   bait.style.cssText = 'position:fixed;left:-9999px;top:-9999px;width:100px;height:100px;pointer-events:none';
   document.body.appendChild(bait);
 
-  // Method 2: Check existing ad elements via computed style
-  function checkCSS() {
-    const selectors = ['.adsbox', '.ad-banner', '.doubleclick', '.advertisement', '.banner_ad'];
-    for (const sel of selectors) {
-      const el = document.querySelector(sel);
-      if (!el) continue;
-      const s = getComputedStyle(el);
-      if (s.display === 'none' || s.visibility === 'hidden' || el.offsetHeight === 0) return true;
-    }
-    return false;
-  }
-
-  // Method 3: Fake ad script that adblockers will block
-  const script = document.createElement('script');
-  script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+  // Bait 2: fake script that will be intercepted by adblockers
+  var script = document.createElement('script');
+  script.src = '/ads.js';
   script.async = true;
   script.onerror = function() { scriptBlocked = true; };
   document.head.appendChild(script);
 
-  // Allow browser to process and check
-  requestAnimationFrame(function() {
-    requestAnimationFrame(function() {
-      // Check bait
-      var s = getComputedStyle(bait);
-      if (s.display === 'none' || s.visibility === 'hidden' || bait.offsetHeight === 0 || bait.offsetParent === null) {
-        baitBlocked = true;
-      }
-      if (bait.parentNode) bait.parentNode.removeChild(bait);
+  // Wait 300ms for Brave Shields to block the baits before checking
+  setTimeout(function() {
+    if (bait.offsetHeight === 0 || bait.offsetParent === null) {
+      baitBlocked = true;
+    }
+    if (bait.parentNode) bait.parentNode.removeChild(bait);
+    if (script.parentNode) script.parentNode.removeChild(script);
 
-      // Check CSS
-      cssBlocked = checkCSS();
+    // Script onerror alone isn't enough (/ads.js doesn't exist),
+    // only count as confirmed blocking if the bait div is also blocked
+    adblockDetected = baitBlocked;
+    if (callback) callback(adblockDetected);
+  }, 300);
+}
 
-      // Clean up script
-      if (script.parentNode) script.parentNode.removeChild(script);
+function showContent(detected) {
+  var overlay = document.getElementById('adblock-overlay');
+  document.documentElement.style.visibility = 'visible';
+  if (detected) {
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  } else {
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+}
 
-      var detected = baitBlocked || cssBlocked || scriptBlocked;
-      if (detected) {
-        overlay.classList.add('active');
-        document.body.style.overflow = 'hidden';
-      } else {
-        overlay.classList.remove('active');
-        document.body.style.overflow = '';
-      }
-    });
+function checkAdBlock() {
+  runAdblockCheck(function(detected) {
+    showContent(detected);
   });
 }
 
 // Run detection on page load
-document.addEventListener('DOMContentLoaded', function() { setTimeout(checkAdBlock, 500); });
+document.addEventListener('DOMContentLoaded', function() { checkAdBlock(); });
 </script>
 </body>
 </html>
