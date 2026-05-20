@@ -507,6 +507,16 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:60px
 .modal-close{position:absolute;top:14px;left:14px;width:32px;height:32px;background:var(--surface3);border:none;border-radius:8px;color:var(--muted);font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s}
 .modal-close:hover{background:var(--surface4);color:var(--white)}
 
+/* ADBLOCK OVERLAY */
+.adblock-overlay{display:none;position:fixed;inset:0;background:rgba(5,4,10,0.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);z-index:999999;align-items:center;justify-content:center;font-family:'Cairo',sans-serif;direction:rtl}
+.adblock-overlay.active{display:flex}
+.adblock-modal{background:var(--surface2);border:1px solid var(--border);border-radius:24px;padding:40px 36px;max-width:460px;width:90%;text-align:center;animation:modalIn .4s cubic-bezier(.22,1,.36,1);position:relative}
+.adblock-icon{font-size:56px;margin-bottom:16px}
+.adblock-title{font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:900;color:var(--white);margin-bottom:16px}
+.adblock-desc{font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:28px}
+.adblock-btn{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--purple),var(--purple-mid));color:white;font-family:'Cairo',sans-serif;font-size:16px;font-weight:700;padding:14px 32px;border-radius:12px;border:none;cursor:pointer;transition:all .25s;box-shadow:0 4px 24px var(--purple-glow)}
+.adblock-btn:hover{transform:translateY(-2px);box-shadow:0 8px 36px var(--purple-glow)}
+
 /* REWARD MODAL */
 .reward-modal-header{text-align:center;margin-bottom:20px}
 .reward-modal-header .icon{font-size:48px;margin-bottom:10px}
@@ -1254,6 +1264,20 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:60px
   </div>
 </div>
 
+<!-- ADBLOCK OVERLAY -->
+<div id="adblock-overlay" class="adblock-overlay">
+  <div class="adblock-modal">
+    <div class="adblock-icon">🛑</div>
+    <h2 class="adblock-title">تم اكتشاف مانع الإعلانات!</h2>
+    <p class="adblock-desc">
+      هذا الموقع مجاني 100% ويعتمد على الإعلانات لتغطية تكاليف الاستضافة والتطوير.<br><br>
+      نرجو منك <strong>تعطيل مانع الإعلانات (AdBlock)</strong> لهذا الموقع ثم الضغط على "تحقق مجدداً" للمتابعة.<br><br>
+      دعمك يساعدنا في استمرار تقديم المحتوى مجاناً للجميع. شكراً لتفهمك ❤️
+    </p>
+    <button class="adblock-btn" onclick="checkAdBlock()">🔄 تحقق مجدداً</button>
+  </div>
+</div>
+
 <script>
 // BG CANVAS
 const canvas=document.getElementById('bg-canvas'),ctx=canvas.getContext('2d');let W,H,particles=[];
@@ -1378,6 +1402,67 @@ function updateProgress(){
   next.addEventListener('click',()=>{show(idx+1);resetAuto()});
   buildDots();resetAuto();
 })();
+
+// ADBLOCK DETECTION
+function checkAdBlock() {
+  let baitBlocked = false, cssBlocked = false, scriptBlocked = false;
+  const overlay = document.getElementById('adblock-overlay');
+
+  // Method 1: Bait element with ad-related class names
+  const bait = document.createElement('div');
+  bait.className = 'adsbox ad-banner doubleclick ad-placement banner_ad';
+  bait.style.cssText = 'position:fixed;left:-9999px;top:-9999px;width:100px;height:100px;pointer-events:none';
+  document.body.appendChild(bait);
+
+  // Method 2: Check existing ad elements via computed style
+  function checkCSS() {
+    const selectors = ['.adsbox', '.ad-banner', '.doubleclick', '.advertisement', '.banner_ad'];
+    for (const sel of selectors) {
+      const el = document.querySelector(sel);
+      if (!el) continue;
+      const s = getComputedStyle(el);
+      if (s.display === 'none' || s.visibility === 'hidden' || el.offsetHeight === 0) return true;
+    }
+    return false;
+  }
+
+  // Method 3: Fake ad script that adblockers will block
+  const script = document.createElement('script');
+  script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+  script.async = true;
+  script.onerror = function() { scriptBlocked = true; };
+  document.head.appendChild(script);
+
+  // Allow browser to process and check
+  requestAnimationFrame(function() {
+    requestAnimationFrame(function() {
+      // Check bait
+      var s = getComputedStyle(bait);
+      if (s.display === 'none' || s.visibility === 'hidden' || bait.offsetHeight === 0 || bait.offsetParent === null) {
+        baitBlocked = true;
+      }
+      if (bait.parentNode) bait.parentNode.removeChild(bait);
+
+      // Check CSS
+      cssBlocked = checkCSS();
+
+      // Clean up script
+      if (script.parentNode) script.parentNode.removeChild(script);
+
+      var detected = baitBlocked || cssBlocked || scriptBlocked;
+      if (detected) {
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+  });
+}
+
+// Run detection on page load
+document.addEventListener('DOMContentLoaded', function() { setTimeout(checkAdBlock, 500); });
 </script>
 </body>
 </html>
