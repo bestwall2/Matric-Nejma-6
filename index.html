@@ -1414,7 +1414,7 @@ function runAdblockCheck(callback) {
   // Bait 1: div with class "adsbox" — Brave Shields targets this
   var bait = document.createElement('div');
   bait.className = 'adsbox';
-  bait.style.cssText = 'position:fixed;left:-9999px;top:-9999px;width:100px;height:100px;pointer-events:none';
+  bait.style.cssText = 'position:absolute;left:-9999px;top:-9999px;width:1px;height:1px;pointer-events:none';
   document.body.appendChild(bait);
 
   // Bait 2: fake script that will be intercepted by adblockers
@@ -1426,7 +1426,7 @@ function runAdblockCheck(callback) {
 
   // Wait 300ms for Brave Shields to block the baits before checking
   setTimeout(function() {
-    if (bait.offsetHeight === 0 || bait.offsetParent === null) {
+    if (bait.offsetHeight === 0) {
       baitBlocked = true;
     }
     if (bait.parentNode) bait.parentNode.removeChild(bait);
